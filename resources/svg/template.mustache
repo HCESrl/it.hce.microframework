@@ -1,0 +1,23 @@
+{{#svgs}}
+${{{name}}}: '{{{inline}}}' {{width}} {{height}};
+{{/svgs}}
+
+@mixin inline-svg($name) {
+	background: transparent url(nth($name, 1)) no-repeat 50% 50%;
+	background-size: 100%;
+}
+
+@mixin inline-svg-full($name) {
+	background: transparent url(nth($name, 1)) no-repeat 50% 50%;
+	background-size: 100%;
+	width: nth($name, 2);
+	height: nth($name, 3);
+}
+
+@function inline-svg-width($name) {
+	@return nth($name, 2);
+}
+
+@function inline-svg-height($name) {
+	@return nth($name, 3);
+}

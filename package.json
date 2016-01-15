@@ -1,0 +1,17 @@
+{
+  "name": "it.hce.microframework",
+  "version": "1.0.0",
+  "description": "a lightweight framework designed for prototyping",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-inline-svg": "^1.0.3",
+    "require-dir": "^0.3.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "UNLICENSED"
+}
