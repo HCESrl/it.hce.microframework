@@ -139,7 +139,6 @@
                 "phpunit/phpunit": "~4.8",
                 "satooshi/php-coveralls": "~1.0"
             },
-  include_once (MicroFramework::getBasePath() . 'vendor/natxet/CssMin/src/CssMin.php');          "type": "library",
             "autoload": {
                 "psr-4": {
                     "MatthiasMullie\\PathConverter\\": "src/"

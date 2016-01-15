@@ -1,7 +1,0 @@
-{
-  "packages": {
-    "hce/microframework": {
-      "dev-master": { @composer.json }
-    }
-  }
-}
