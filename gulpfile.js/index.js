@@ -5,4 +5,10 @@ var
 
 requireDir('./tasks');
 
-gulp.task('default', ['build-svg-css']);
+gulp.task('default', [
+    'build-svg-css',
+    'build-images',
+    'copy-audio',
+    'copy-fonts',
+    'copy-video'
+]);

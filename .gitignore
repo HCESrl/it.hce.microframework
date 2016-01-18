@@ -3,3 +3,8 @@
 
 #IDE
 .idea
+/public/images
+/public/audio
+/public/fonts
+/public/video
+/public/css/_iconsFactory.scss

@@ -1,0 +1,7 @@
+{
+  "dev": true,
+  "imagesResolutions": [
+    1440, 1024, 480
+  ],
+  "imagesQuality": 100
+}

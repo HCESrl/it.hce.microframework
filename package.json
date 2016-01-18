@@ -6,7 +6,9 @@
   "dependencies": {},
   "devDependencies": {
     "gulp": "^3.9.0",
+    "gulp-gm": "0.0.8",
     "gulp-inline-svg": "^1.0.3",
+    "gulp-svgmin": "^1.2.0",
     "require-dir": "^0.3.0"
   },
   "scripts": {

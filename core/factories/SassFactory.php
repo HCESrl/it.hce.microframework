@@ -2,13 +2,14 @@
 
 namespace it\hce\microframework\core\factories;
 
-use CssMin;
 use it\hce\microframework\core\MicroFramework;
 use Leafo\ScssPhp\Compiler;
+use MatthiasMullie\Minify\CSS;
 
 class SassFactory {
     private $compiler;
     private $main;
+    private $minifier;
 
     public function __construct()
     {
@@ -16,6 +17,12 @@ class SassFactory {
         $this->compiler = new Compiler();
 
         $this->main = file_get_contents(MicroFramework::getPublicPath() . 'css/main.scss');
+
+        include_once(MicroFramework::getBasePath() . 'vendor/matthiasmullie/minify/src/Minify.php');
+        include_once(MicroFramework::getBasePath() . 'vendor/matthiasmullie/minify/src/CSS.php');
+        include_once(MicroFramework::getBasePath() . 'vendor/matthiasmullie/path-converter/src/Converter.php');
+
+        $this->minifier = new CSS();
     }
 
     public function collectSCSS()
@@ -25,8 +32,8 @@ class SassFactory {
 
     public function write($path)
     {
-        include_once (MicroFramework::getBasePath() . 'vendor/natxet/CssMin/src/CssMin.php');
+        $this->minifier->add($this->compiler->compile($this->main));
 
-        file_put_contents($path, CssMin::minify($this->compiler->compile($this->main)));
+        file_put_contents($path, $this->minifier->minify());
     }
 }
