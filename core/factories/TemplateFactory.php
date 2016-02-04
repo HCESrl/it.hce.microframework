@@ -76,7 +76,7 @@ class TemplateFactory
      */
     private static function writeJS()
     {
-        self::$currentTemplate = str_replace('{{{$jsFile}}}', '../js/main.js', self::$currentTemplate); // PHP COMPILED
+        self::$currentTemplate = str_replace('{{{$jsFile}}}', 'js/main.js', self::$currentTemplate); // PHP COMPILED
     }
 
     /**
