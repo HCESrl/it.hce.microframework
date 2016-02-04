@@ -23,8 +23,12 @@ class MicroFramework {
         include_once ('factories/ComponentsFactory.php');
         include_once ('AComponent.php');
 
-        // Reads from the URL
-        $file = isset($_GET['file']) ? $this->getPublicPath($_GET['file'] . '.php') : $this->getPublicPath('homepage/homepage.php');
+        // Redirect to main route if no page is set
+        if(! isset($_GET['file'])) {
+            header('Location: ./homepage/homepage');
+        }
+
+        $file = $this->getPublicPath($_GET['file'] . '.php');
         if(file_exists($file))
         {
             // Setup
@@ -32,6 +36,8 @@ class MicroFramework {
 
             // Starts the magic
             include_once($file);
+        } else {
+            header("HTTP/1.0 404 Not Found");
         }
     }
 
