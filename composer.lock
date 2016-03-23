@@ -4,21 +4,50 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "79b7623f0358bba2f483c643d95fc1d8",
-    "content-hash": "ca771f236f1f17fc3793040e52a8d86d",
+    "hash": "53dcf101fb95a36225f5952da85f24b2",
+    "content-hash": "1a76a0f8838297ffbf4ee6ab0bf3c812",
     "packages": [
         {
-            "name": "leafo/scssphp",
-            "version": "v0.6.2",
+            "name": "hce/microframework-core",
+            "version": "0.0.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/leafo/scssphp.git",
-                "reference": "feecdbe1defcd89089e51bf89bf77e0332658517"
+                "url": "https://github.com/MarcoBoffo/it.hce.microframework.core.git",
+                "reference": "56fce651289b7c0b7a4ee07e676f834560b6c3c3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/leafo/scssphp/zipball/feecdbe1defcd89089e51bf89bf77e0332658517",
-                "reference": "feecdbe1defcd89089e51bf89bf77e0332658517",
+                "url": "https://api.github.com/repos/MarcoBoffo/it.hce.microframework.core/zipball/56fce651289b7c0b7a4ee07e676f834560b6c3c3",
+                "reference": "56fce651289b7c0b7a4ee07e676f834560b6c3c3",
+                "shasum": ""
+            },
+            "require": {
+                "leafo/scssphp": "^0.6.2",
+                "matthiasmullie/minify": "^1.3"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Gatto",
+                    "email": "mboffo@hce.it"
+                }
+            ],
+            "description": "microframework core files",
+            "time": "2016-03-23 15:40:00"
+        },
+        {
+            "name": "leafo/scssphp",
+            "version": "v0.6.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/leafo/scssphp.git",
+                "reference": "a27edad3d16635a222d7204706572e24c338aa17"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/leafo/scssphp/zipball/a27edad3d16635a222d7204706572e24c338aa17",
+                "reference": "a27edad3d16635a222d7204706572e24c338aa17",
                 "shasum": ""
             },
             "require": {
@@ -58,20 +87,20 @@
                 "scss",
                 "stylesheet"
             ],
-            "time": "2015-12-16 22:46:24"
+            "time": "2016-01-15 02:50:06"
         },
         {
             "name": "matthiasmullie/minify",
-            "version": "1.3.30",
+            "version": "1.3.34",
             "source": {
                 "type": "git",
                 "url": "https://github.com/matthiasmullie/minify.git",
-                "reference": "0cd5108683e7376e795555ced56229c4c16597aa"
+                "reference": "272e46113404f66ced256659552a0cc074a7810f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/matthiasmullie/minify/zipball/0cd5108683e7376e795555ced56229c4c16597aa",
-                "reference": "0cd5108683e7376e795555ced56229c4c16597aa",
+                "url": "https://api.github.com/repos/matthiasmullie/minify/zipball/272e46113404f66ced256659552a0cc074a7810f",
+                "reference": "272e46113404f66ced256659552a0cc074a7810f",
                 "shasum": ""
             },
             "require": {
@@ -81,8 +110,7 @@
             },
             "require-dev": {
                 "matthiasmullie/scrapbook": "~1.0",
-                "phpunit/phpunit": "~4.8",
-                "satooshi/php-coveralls": "~1.0"
+                "phpunit/phpunit": "~4.8"
             },
             "bin": [
                 "bin/minifycss",
@@ -115,7 +143,7 @@
                 "minifier",
                 "minify"
             ],
-            "time": "2016-01-05 07:43:18"
+            "time": "2016-03-01 08:00:27"
         },
         {
             "name": "matthiasmullie/path-converter",
@@ -139,6 +167,7 @@
                 "phpunit/phpunit": "~4.8",
                 "satooshi/php-coveralls": "~1.0"
             },
+            "type": "library",
             "autoload": {
                 "psr-4": {
                     "MatthiasMullie\\PathConverter\\": "src/"
@@ -165,53 +194,6 @@
                 "relative"
             ],
             "time": "2016-01-07 00:41:13"
-        },
-        {
-            "name": "natxet/CssMin",
-            "version": "v3.0.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/natxet/CssMin.git",
-                "reference": "92de3fe3ccb4f8298d31952490ef7d5395855c39"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/natxet/CssMin/zipball/92de3fe3ccb4f8298d31952490ef7d5395855c39",
-                "reference": "92de3fe3ccb4f8298d31952490ef7d5395855c39",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.0-dev"
-                }
-            },
-            "autoload": {
-                "classmap": [
-                    "src/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Joe Scylla",
-                    "email": "joe.scylla@gmail.com",
-                    "homepage": "https://profiles.google.com/joe.scylla"
-                }
-            ],
-            "description": "Minifying CSS",
-            "homepage": "http://code.google.com/p/cssmin/",
-            "keywords": [
-                "css",
-                "minify"
-            ],
-            "time": "2015-09-25 11:13:11"
         }
     ],
     "packages-dev": [],
