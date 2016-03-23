@@ -1,16 +1,17 @@
 {
-    "name": "hce/microframework",
-    "description": "a lightweight framework designed for prototyping",
-    "type": "project",
-    "license": "proprietary",
-    "authors": [
-        {
-            "name": "Marco Gatto Boffo",
-            "email": "mboffo@hce.it"
-        }
-    ],
-    "require": {
-        "hce/microframework-core": "0.*.*"
-    },
-    "minimum-stability": "stable"
+  "name": "hce/microframework",
+  "version": "0.0.1",
+  "description": "a lightweight framework designed for prototyping",
+  "type": "project",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Marco Gatto Boffo",
+      "email": "mboffo@hce.it"
+    }
+  ],
+  "require": {
+    "hce/microframework-core": "0.*.*"
+  },
+  "minimum-stability": "stable"
 }
