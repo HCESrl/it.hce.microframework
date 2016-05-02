@@ -1,3 +1,6 @@
 {
-  "text": "it.hce.microframework"
+  "text": "it.hce.microframework",
+  "subTemplate1": {
+    "templateName": "sub1"
+  }
 }
