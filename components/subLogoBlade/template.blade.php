@@ -1,0 +1,1 @@
+subTemplate {{$subLogoBlade->sub}}

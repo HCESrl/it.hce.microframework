@@ -137,3 +137,8 @@ Useful when some kind of JSON reply is needed.
 * All your common resources in one folder
 Place audio, video, css, fonts, images, js, svgs in the `resources` folder, with `gulp` everything will be smartly copied in `public`
 
+* RTL support
+Add `rtl=true` parameter in your URL in order to activate CssJanus.
+
+* Blade Support
+https://laravel.com/docs/5.1/blade
