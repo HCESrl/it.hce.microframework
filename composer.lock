@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2cc0426cb787326b41044dbcc8f1ec4c",
-    "content-hash": "ff0dbaf0b000bf9e4bc6c94c9b1ca3d0",
+    "hash": "55b9d149518a56b4b2c6bde17159645d",
+    "content-hash": "56686e5ac3ef3133d6c2a2afb0825506",
     "packages": [
         {
             "name": "cssjanus/cssjanus",
@@ -111,16 +111,16 @@
         },
         {
             "name": "hce/microframework-core",
-            "version": "0.2.2",
+            "version": "0.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/HCESrl/it.hce.microframework.core.git",
-                "reference": "0f6587bd15e7f940ef31a26a169b2debc6ce053d"
+                "reference": "c309f43d9ac2908b3212d4049765201c05e31b7d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/HCESrl/it.hce.microframework.core/zipball/0f6587bd15e7f940ef31a26a169b2debc6ce053d",
-                "reference": "0f6587bd15e7f940ef31a26a169b2debc6ce053d",
+                "url": "https://api.github.com/repos/HCESrl/it.hce.microframework.core/zipball/c309f43d9ac2908b3212d4049765201c05e31b7d",
+                "reference": "c309f43d9ac2908b3212d4049765201c05e31b7d",
                 "shasum": ""
             },
             "require": {
@@ -130,6 +130,13 @@
                 "matthiasmullie/minify": "^1.3"
             },
             "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "it\\hce\\microframework\\core\\": "src/",
+                    "it\\hce\\microframework\\core\\factories\\": "src/factories",
+                    "it\\hce\\microframework\\core\\exceptions\\": "src/exceptions"
+                }
+            },
             "notification-url": "https://packagist.org/downloads/",
             "authors": [
                 {
@@ -138,7 +145,7 @@
                 }
             ],
             "description": "microframework core files",
-            "time": "2016-07-21 15:09:03"
+            "time": "2016-07-22 09:19:04"
         },
         {
             "name": "illuminate/container",
