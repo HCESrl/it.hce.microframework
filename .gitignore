@@ -1,8 +1,11 @@
+# IDE
+.idea
+
+# Libraries
 /node_modules
 /vendor
 
-#IDE
-.idea
+# Compiled Resources
 /public/css/main.css
 /public/css/**/
 /public/images

@@ -6,6 +6,7 @@
 * `npm install`
 * Point your webserver to `public` folder
 * Set `public/css` and `public/js` as writable folders (create them if necessary)
+* Set `cache` as writable folder if you plan to use Blade as template engine
 
 ## Create a component
 * Create a folder under `components` named as you wish, for example `component`
@@ -113,9 +114,11 @@ echo TemplateFactory::loadTemplate($templateName, $components, 'component');
 
 * Compile Sass on the fly
 Add any entry to `resources/css/main.scss` and let PHP compile and minify it for you.
+Create a `main.scss.lock` to bypass this.
 
 * Compile JS on the fly
 All your components' JS and the list located at `config/javascripts.json` will be compiled under a unique main.js file.
+Create a `main.js.lock` to bypass this.
 
 * Icon support
 Save your SVG icons under `resources/svg` and they will be parsed by the icons factory.
