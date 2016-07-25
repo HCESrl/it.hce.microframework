@@ -11,7 +11,14 @@
     }
   ],
   "require": {
-    "hce/microframework-core": "0.*.*"
+    "hce/microframework-core": "dev-rtl"
   },
-  "minimum-stability": "stable"
+  "repositories": [
+    {
+      "type": "vcs",
+      "url":  "git@github.com:HCESrl/it.hce.microframework.core.git"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }
