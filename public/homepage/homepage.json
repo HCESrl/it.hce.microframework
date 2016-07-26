@@ -1,0 +1,15 @@
+{
+  "templateName": "homepage",
+  "components": [
+    {
+      "name": "logo",
+      "componentName": "logo",
+      "dataSet": "default"
+    },
+    {
+      "name": "subLogo",
+      "componentName": "subLogo",
+      "dataSet": "sub"
+    }
+  ]
+}

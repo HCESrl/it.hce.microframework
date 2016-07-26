@@ -6,32 +6,15 @@
 * `npm install`
 * Point your webserver to `public` folder
 * Set `public/css` and `public/js` as writable folders (create them if necessary)
-* Set `cache` as writable folder if you plan to use Blade as template engine
+* Set `cache` as writable folder
 
 ## Create a component
 * Create a folder under `components` named as you wish, for example `component`
-* Create a PHP loader called `Component.php` with:
+
+* Create a component template: `template.blade.php`
 
 ```
-<?php
-namespace it\hce\microframework\components;
-
-
-use it\hce\microframework\core\AComponent;
-
-class Component extends AComponent {
-    const name = 'component';
-
-    public function __construct($basePath, $dataSet) {
-        parent::__construct($basePath, self::name, $dataSet);
-    }
-}
-```
-
-* Create a component template: `template.html`
-
-```
-<div class="component">{{{$text}}}</div>
+<div class="component">{{$component->text}}</div>
 ```
 
 * Style it with a new file called `_style.scss`, add this entry to `resources/css/main.scss`
@@ -58,57 +41,98 @@ App.Component = function () ...
 
 ## Create a template
 
-* Create a template file under `templates`, for example: `template.html`
+* Create a template file under `templates`, for example: `homepage.blade.php`
 
 ```
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>hce microframework</title>
-        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
-        <link rel="stylesheet" href="../css/main.css?{{{$time}}}">
-        <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
-    </head>
-    <body class="home">
-        {{{$components}}}
+<head>
+    <title>hce microframework</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="{{$GLOBAL->css}}">
+    <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+</head>
+<body class="home">
 
-        <script src="{{{$jsFile}}}?{{{$time}}}"></script>
-    </body>
+@include('components.logo.template')
+
+<script src="{{$GLOBAL->js}}"></script>
+</body>
 </html>
 ```
 
-The `{{{$components}}}` placeholder is where your component list (we will define it later), will be placed
-The `{{{$time}}}` placeholder is a special framework placeholder that displays the UNIX time
-
 ## Combine components inside templates
 
-* Create a folder under `public` for your route, example: `test`
-* Create a `.php` file called `testing.php`
+* Create a folder under `public` for your route, example: `homepage`
+* Create a `.php` file called `homepage.json` inside that folder
 
 ```
-<?php
+{
+  "templateName": "homepage",
+  "components": [
+    {
+      "name": "logo",
+      "componentName": "logo",
+      "dataSet": "default"
+    },
+    {
+      "name": "subLogo",
+      "componentName": "subLogo",
+      "dataSet": "sub"
+    }
+  ]
+}
+```
 
-use it\hce\microframework\core\factories\TemplateFactory;
+`name` will be the Blade accessible variable
+`componentName` is the component's directory name in the filesystem
+`dataSet` is the loadding model
 
-//Template Name
-$templateName = 'template';
+*You can load a component more that one time*
 
-//Components list ['name' => 'dataset']
-$components = array(
-    array(
-        "component" => 'component',
-        "dataset"   => null
-    ),
-);
-
-//Loading Template Factory
-echo TemplateFactory::loadTemplate($templateName, $components, 'component');
+The JSON should follow this Schema:
+```
+{
+  "type": "object",
+  "properties": {
+    "templateName": {
+      "type": "string",
+      "default": "homepage",
+      "required": true
+    },
+    "components": {
+      "type": "array",
+      "required": true,
+      "items": [
+        {
+          "type": "object",
+          "required": true,
+          "properties": {
+            "name": {
+              "type": "string",
+              "required": true
+            },
+            "componentName": {
+              "type": "string",
+              "required": true
+            },
+            "dataSet": {
+              "type": "string",
+              "required": true,
+              "default": "default"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
 ```
 
 ## See results
 
 * Run `gulp`
-* Go to your webserver `http://www.your.host/test/testing`
+* Go to your webserver `http://www.your.host/homepage/homepage`
 
 ## Features
 
@@ -124,21 +148,9 @@ Create a `main.js.lock` to bypass this.
 Save your SVG icons under `resources/svg` and they will be parsed by the icons factory.
 Include them using `@include inline-svg($icon-name)` in any scss file.
 
-* JSON output support
-Under your route you can pass `true` as last parameter to enable JSON header reply by the server:
-
-```
-//Loading Template Factory
-echo TemplateFactory::loadTemplate($templateName, $components, 'component', true);
-```
-
-Useful when some kind of JSON reply is needed.
-
 * All your common resources in one folder
 Place audio, video, css, fonts, images, js, svgs in the `resources` folder, with `gulp` everything will be smartly copied in `public`
 
-* RTL support
-Add `rtl=true` parameter in your URL in order to activate CssJanus.
-
 * Blade Support
-https://laravel.com/docs/5.1/blade
+The whole template engine is powered by [Blade](https://laravel.com/docs/5.1/blade)
+The components also use that engine to work

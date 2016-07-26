@@ -8,7 +8,7 @@
 </head>
 <body class="home">
 
-@include('components.logoBlade.template')
+@include('components.logo.template')
 
 <script src="{{$GLOBAL->js}}"></script>
 </body>
