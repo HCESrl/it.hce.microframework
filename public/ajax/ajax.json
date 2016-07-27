@@ -1,0 +1,16 @@
+{
+  "templateName": "ajax",
+  "ajax": true,
+  "components": [
+    {
+      "name": "dataA",
+      "componentName": "randomData",
+      "dataSet": "aData"
+    },
+    {
+      "name": "dataB",
+      "componentName": "randomData",
+      "dataSet": "bData"
+    }
+  ]
+}
