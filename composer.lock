@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "55b9d149518a56b4b2c6bde17159645d",
-    "content-hash": "56686e5ac3ef3133d6c2a2afb0825506",
+    "hash": "d2715bfd09a6a8bcf04943ad85af4e78",
+    "content-hash": "05af26d59388ff4c1139b17090504161",
     "packages": [
         {
             "name": "cssjanus/cssjanus",
@@ -111,16 +111,16 @@
         },
         {
             "name": "hce/microframework-core",
-            "version": "0.2.4",
+            "version": "dev-rtl",
             "source": {
                 "type": "git",
                 "url": "https://github.com/HCESrl/it.hce.microframework.core.git",
-                "reference": "c309f43d9ac2908b3212d4049765201c05e31b7d"
+                "reference": "6e00d6b658ae5166ebdc660faae9c6fc9ec09f50"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/HCESrl/it.hce.microframework.core/zipball/c309f43d9ac2908b3212d4049765201c05e31b7d",
-                "reference": "c309f43d9ac2908b3212d4049765201c05e31b7d",
+                "url": "https://api.github.com/repos/HCESrl/it.hce.microframework.core/zipball/6e00d6b658ae5166ebdc660faae9c6fc9ec09f50",
+                "reference": "6e00d6b658ae5166ebdc660faae9c6fc9ec09f50",
                 "shasum": ""
             },
             "require": {
@@ -137,7 +137,6 @@
                     "it\\hce\\microframework\\core\\exceptions\\": "src/exceptions"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "authors": [
                 {
                     "name": "Gatto",
@@ -145,7 +144,11 @@
                 }
             ],
             "description": "microframework core files",
-            "time": "2016-07-22 09:19:04"
+            "support": {
+                "source": "https://github.com/HCESrl/it.hce.microframework.core/tree/rtl",
+                "issues": "https://github.com/HCESrl/it.hce.microframework.core/issues"
+            },
+            "time": "2016-07-27 08:16:00"
         },
         {
             "name": "illuminate/container",
@@ -832,9 +835,11 @@
     ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "stable",
-    "stability-flags": [],
-    "prefer-stable": false,
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "hce/microframework-core": 20
+    },
+    "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": []

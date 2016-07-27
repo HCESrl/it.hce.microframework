@@ -3,7 +3,7 @@
 <head>
     <title>hce microframework</title>
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
-    <link rel="stylesheet" href="{{$GLOBAL->css}}">
+    {!! $GLOBAL->css !!}
     <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
 </head>
 <body class="home">
