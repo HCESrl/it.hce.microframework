@@ -3,7 +3,7 @@
 use it\hce\microframework\core\factories\TemplateFactory;
 
 //Template Name
-$templateName = 'homepage';
+$templateName = 'homepage-rtl';
 
 //Components list ['name' => 'dataset']
 $components = array(
