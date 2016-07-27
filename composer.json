@@ -15,7 +15,7 @@
     }
   ],
   "require": {
-    "hce/microframework-core": "dev-rtl"
+    "hce/microframework-core": "^0.2.7"
   },
   "repositories": [
     {
