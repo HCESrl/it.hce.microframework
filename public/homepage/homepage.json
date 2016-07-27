@@ -1,5 +1,6 @@
 {
   "templateName": "homepage",
+  "direction": "rtl",
   "components": [
     {
       "name": "logo",
