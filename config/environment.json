@@ -1,7 +1,14 @@
 {
   "dev": true,
-  "imagesResolutions": [
-    1440, 1024, 480
-  ],
-  "imagesQuality": 100
+  "imagesQuality": 100,
+  "scalableImages": {
+    "logoSet": {
+      "resolutions": [
+        1440,
+        1024,
+        480
+      ],
+      "sizes": ""
+    }
+  }
 }

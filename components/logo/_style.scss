@@ -15,3 +15,13 @@
   height: 50vh;
   font-size: 1em;
 }
+
+.img {
+  width: 100%;
+  padding: 5%;
+  box-sizing: border-box;
+
+  img {
+    width: 100%;
+  }
+}
