@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b9345ec214d16c236ec5e0d7e7582203",
-    "content-hash": "8f249b777c73b203eb0da515bc0babaf",
+    "hash": "079bdf770c9f6e3f1123b15f08f05173",
+    "content-hash": "2c0c3d1e5df2150fa5a36ee85755ffbb",
     "packages": [
         {
             "name": "cssjanus/cssjanus",
@@ -111,16 +111,16 @@
         },
         {
             "name": "hce/microframework-core",
-            "version": "1.1.0",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/HCESrl/it.hce.microframework.core.git",
-                "reference": "e4c8f6651570e0711e313e877965c5b46cc95060"
+                "reference": "3ea90c262fe2070b02b2daa25bdd2f01fe86916a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/HCESrl/it.hce.microframework.core/zipball/e4c8f6651570e0711e313e877965c5b46cc95060",
-                "reference": "e4c8f6651570e0711e313e877965c5b46cc95060",
+                "url": "https://api.github.com/repos/HCESrl/it.hce.microframework.core/zipball/3ea90c262fe2070b02b2daa25bdd2f01fe86916a",
+                "reference": "3ea90c262fe2070b02b2daa25bdd2f01fe86916a",
                 "shasum": ""
             },
             "require": {
@@ -147,7 +147,7 @@
                 }
             ],
             "description": "microframework core files",
-            "time": "2016-08-01 11:53:43"
+            "time": "2016-08-01 16:14:09"
         },
         {
             "name": "illuminate/container",

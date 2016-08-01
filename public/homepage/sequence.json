@@ -1,0 +1,16 @@
+{
+  "templateName": "sequence",
+  "direction": "ltr",
+  "components": [
+    {
+      "name": "logo",
+      "componentName": "logo",
+      "dataSet": "default"
+    },
+    {
+      "name": "subLogo",
+      "componentName": "subLogo",
+      "dataSet": "sub"
+    }
+  ]
+}
