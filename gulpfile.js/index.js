@@ -8,6 +8,7 @@ requireDir('./tasks');
 gulp.task('default', [
     'build-svg-css',
     'build-images',
+    'build-static-images',
     'copy-audio',
     'copy-fonts',
     'copy-video'

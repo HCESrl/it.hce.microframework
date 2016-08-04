@@ -10,5 +10,5 @@ gulp.task('build-svg-css', function () {
             filename: '_iconsFactory.scss',
             template: 'resources/svg/template.mustache'
         }))
-        .pipe(gulp.dest('public/css'));
+        .pipe(gulp.dest('resources/css'));
 });

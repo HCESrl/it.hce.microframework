@@ -27,9 +27,14 @@ gulp.task('build-images', function () {
                     return gmfile.quality(quality)
                         .resize(resolution);
                 }))
-                .pipe(gulp.dest(function (file) {
+                .pipe(gulp.dest(function () {
                     return 'public/images/components/' + resolution + '/' + componentsNames[index] + '/';
                 }));
         });
     });
+});
+
+gulp.task('build-static-images', function () {
+    return gulp.src(['resources/images/static/**/*.png', 'resources/images/static/**/*.jpg'])
+        .pipe(gulp.dest('public/images'));
 });
