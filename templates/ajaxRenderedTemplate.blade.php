@@ -1,0 +1,1 @@
+{ "ciao": @jsonEncodeBladeTemplate(['templateName' => 'components.logo.template', 'model' => ['logo' => $logo, 'subLogo' => $subLogo]])}
