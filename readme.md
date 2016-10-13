@@ -64,7 +64,7 @@ App.Component = function () ...
 ## Combine components inside templates
 
 * Create a folder under `public` for your route, example: `homepage`
-* Create a `.php` file called `homepage.json` inside that folder
+* Create a `.json` file called `homepage.json` inside that folder
 
 ```
 {
@@ -84,11 +84,11 @@ App.Component = function () ...
 }
 ```
 
-`name` will be the Blade accessible variable
+`name` will be the internal name of the component
 `componentName` is the component's directory name in the filesystem
 `dataSet` is the loadding model
 
-*You can load a component more that one time*
+*You can load a component more that once, just give it a different name*
 
 The JSON should follow this Schema:
 ```
@@ -154,3 +154,8 @@ Place audio, video, css, fonts, images, js, svgs in the `resources` folder, with
 * Blade Support
 The whole template engine is powered by [Blade](https://laravel.com/docs/5.1/blade)
 The components also use that engine to work
+
+* Native responsive images support
+add the following code to the blade template:
+`@responsiveImage(['image' => $component->image, 'component' => 'componentName', 'attributes' => 'class="" alt="'.$component->articleTitle.'"'])
+`the system will insert a tag with the image path, and create the appropriate srcset attribute according to the component's configuration. Responsive images can be created with the build-images Gulp task, based on a source image in the resoursces/images/scalable/componentName directory.
