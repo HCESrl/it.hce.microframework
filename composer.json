@@ -1,6 +1,6 @@
 {
   "name": "hce/microframework",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "a lightweight framework designed for prototyping",
   "type": "project",
   "license": "proprietary",
