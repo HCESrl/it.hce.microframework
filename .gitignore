@@ -6,11 +6,13 @@
 /vendor
 
 # Compiled Resources
+/static/**/
 /public/css/main.css
-/public/css/**/
+/public/css/main.rtl.css
 /public/images
 /public/audio
 /public/fonts
 /public/js/main.js
 /public/video
 /public/css/_iconsFactory.scss
+/cache/*.php

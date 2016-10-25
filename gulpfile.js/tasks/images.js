@@ -1,40 +1,44 @@
 var
-    gulp = require('gulp'),
-    gm = require('gulp-gm'),
-    config = require('../../config/environment.json');
+  gulp = require('gulp'),
+  gm = require('gulp-gm'),
+  config = require('../../config/environment.json');
 
 gulp.task('build-images', function () {
-    var resolutions = config.imagesResolutions;
-    var quality = config.imagesQuality;
+  var resolutions = config.imagesResolutions;
+  var quality = config.imagesQuality;
 
-    var scalableImages = config.scalableImages;
-    var componentsNames = Object.getOwnPropertyNames(scalableImages);
+  var scalableImages = config.scalableImages;
+  var componentsNames = Object.getOwnPropertyNames(scalableImages);
 
-    Object.keys(scalableImages).forEach(function (imgSet, index) {
-        imgSet = scalableImages[imgSet];
-        imgSet.resolutions.forEach(function (resolution) {
-            ///Remember to install: apt-get install graphicsmagick
-            //For API doc: http://aheckmann.github.io/gm/docs.html
-            gulp.src(['resources/images/scalable/' + componentsNames[index] + '/*.png', 'resources/images/scalable/' + componentsNames[index] + '/*.jpg'])
-                .pipe(gm(function (gmfile) {
-                    if (config.dev) {
-                        return gmfile.fill("#ffffff")
-                            .fontSize(resolution / 20)
-                            .drawText(resolution / 20, 0, resolution.toString().replace(/(.)/g, "$1\n"), 'East')
-                            .quality(quality)
-                            .resize(resolution);
-                    }
-                    return gmfile.quality(quality)
-                        .resize(resolution);
-                }))
-                .pipe(gulp.dest(function () {
-                    return 'public/images/components/' + resolution + '/' + componentsNames[index] + '/';
-                }));
-        });
+  Object.keys(scalableImages).forEach(function (imgSet, index) {
+    imgSet = scalableImages[ imgSet ];
+    imgSet.resolutions.forEach(function (resolution) {
+      ///Remember to install: apt-get install graphicsmagick
+      //For API doc: http://aheckmann.github.io/gm/docs.html
+      gulp.src([ 'resources/images/scalable/' + componentsNames[ index ] + '/*.png', 'resources/images/scalable/' + componentsNames[ index ] + '/*.jpg' ])
+        .pipe(gm(function (gmfile) {
+          if (config.dev) {
+            return gmfile.fill("#ffffff")
+              .fontSize(resolution / 20)
+              .drawText(resolution / 20, 0, resolution.toString().replace(/(.)/g, "$1\n"), 'East')
+              .quality(quality)
+              .resize(resolution);
+          }
+          return gmfile.quality(quality)
+            .resize(resolution);
+        }))
+        .pipe(gulp.dest(function () {
+          return 'public/images/components/' + resolution + '/' + componentsNames[ index ] + '/';
+        }))
+        .pipe(gulp.dest(function () {
+          return 'static/images/components/' + resolution + '/' + componentsNames[ index ] + '/';
+        }));
     });
+  });
 });
 
 gulp.task('build-static-images', function () {
-    return gulp.src(['resources/images/static/**/*.png', 'resources/images/static/**/*.jpg'])
-        .pipe(gulp.dest('public/images'));
+  return gulp.src([ 'resources/images/static/**/*.png', 'resources/images/static/**/*.jpg' ])
+    .pipe(gulp.dest('public/images'))
+    .pipe(gulp.dest('static/images'));
 });
