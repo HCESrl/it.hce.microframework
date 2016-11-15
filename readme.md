@@ -163,3 +163,23 @@ The components also use that engine to work
 add the following code to the blade template:
 `@responsiveImage(['image' => $component->image, 'component' => 'componentName', 'attributes' => 'class="" alt="'.$component->articleTitle.'"'])
 `the system will insert a tag with the image path, and create the appropriate srcset attribute according to the component's configuration. Responsive images can be created with the build-images Gulp task, based on a source image in the resoursces/images/scalable/componentName directory.
+
+# HCE Microframework Static Output
+
+## Usage
+Compile the whole project as static output
+
+`php static-output.php` and `gulp`;
+
+`cd static`
+
+Install the http-server (provided by node)
+
+`npm install http-server -g`
+
+Run the server
+
+`http-server`
+
+Open your browser@
+`localhost:8080`
