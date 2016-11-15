@@ -3,8 +3,12 @@
 
 ## Install
 * `php composer.phar create-project hce/microframework projectName`
+or
+* `composer.phar create-project hce/microframework projectName`
+then
+* `cd projectName`
 * `npm install`
-* Point your webserver to `public` folder
+* Point your webserver to `projectName/public` folder
 * Set `public/css` and `public/js` as writable folders (create them if necessary)
 * Set `cache` as writable folder
 
