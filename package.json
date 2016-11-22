@@ -1,6 +1,6 @@
 {
   "name": "it.hce.microframework",
-  "version": "1.2.2",
+  "version": "1.4.0",
   "description": "a lightweight framework designed for prototyping",
   "main": "gulpfile.js",
   "dependencies": {},
