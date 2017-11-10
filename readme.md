@@ -152,7 +152,8 @@ The JSON should follow this Schema:
 
 Add any entry to `resources/css/main.scss` and let PHP compile and minify it for you.
 Create a `main.scss.lock` to bypass this.
-In order to boost your sass compiling performance please refer to: [sassphp](https://github.com/absalomedia/sassphp)
+
+In order to boost your sass compiling performance please refer to: [sassphp](https://github.com/absalomedia/sassphp).
 
 * Compile JS on the fly
 
