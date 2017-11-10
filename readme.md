@@ -1,11 +1,17 @@
 # it.hce.microframework
-### a lightweight framework designed for prototyping
+
+> a lightweight framework designed for prototyping
 
 ## Install
+
 * `php composer.phar create-project hce/microframework projectName`
+
 or
+
 * `composer.phar create-project hce/microframework projectName`
+
 then
+
 * `cd projectName`
 * `npm install`
 * Point your webserver to `projectName/public` folder
@@ -13,17 +19,18 @@ then
 * Set `cache` as writable folder
 
 ## Create a component
+
 * Create a folder under `components` named as you wish, for example `component`
 
 * Create a component template: `template.blade.php`
 
-```
+```html
 <div class="component">{{$component->text}}</div>
 ```
 
 * Style it with a new file called `_style.scss`, add this entry to `resources/css/main.scss`
 
-```
+```css
 .component {
     color: red;
 }
@@ -31,13 +38,13 @@ then
 
 * Make it dynamic with `script.js`
 
-```
+```js
 App.Component = function () ...
 ```
 
 * Create a `datasets` folder and place a `default.json` file
 
-```
+```json
 {
   "text": "it.hce.microframework"
 }
@@ -47,7 +54,7 @@ App.Component = function () ...
 
 * Create a template file under `templates`, for example: `homepage.blade.php`
 
-```
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -70,7 +77,7 @@ App.Component = function () ...
 * Create a folder under `public` for your route, example: `homepage`
 * Create a `.json` file called `homepage.json` inside that folder
 
-```
+```json
 {
   "templateName": "homepage",
   "components": [
@@ -92,10 +99,11 @@ App.Component = function () ...
 `componentName` is the component's directory name in the filesystem
 `dataSet` is the loadding model
 
-*You can load a component more that once, just give it a different name*
+> You can load a component more that once, just give it a different name
 
 The JSON should follow this Schema:
-```
+
+```json
 {
   "type": "object",
   "properties": {
@@ -141,32 +149,40 @@ The JSON should follow this Schema:
 ## Features
 
 * Compile Sass on the fly
+
 Add any entry to `resources/css/main.scss` and let PHP compile and minify it for you.
 Create a `main.scss.lock` to bypass this.
+In order to boost your sass compiling performance please refer to: [sassphp](https://github.com/absalomedia/sassphp)
 
 * Compile JS on the fly
+
 All your components' JS and the list located at `config/javascripts.json` will be compiled under a unique main.js file.
 Create a `main.js.lock` to bypass this.
 
 * Icon support
+
 Save your SVG icons under `resources/svg` and they will be parsed by the icons factory.
 Include them using `@include inline-svg($icon-name)` in any scss file.
 
 * All your common resources in one folder
+
 Place audio, video, css, fonts, images, js, svgs in the `resources` folder, with `gulp` everything will be smartly copied in `public`
 
 * Blade Support
+
 The whole template engine is powered by [Blade](https://laravel.com/docs/5.1/blade)
 The components also use that engine to work
 
 * Native responsive images support
+
 add the following code to the blade template:
 `@responsiveImage(['image' => $component->image, 'component' => 'componentName', 'attributes' => 'class="" alt="'.$component->articleTitle.'"'])
 `the system will insert a tag with the image path, and create the appropriate srcset attribute according to the component's configuration. Responsive images can be created with the build-images Gulp task, based on a source image in the resoursces/images/scalable/componentName directory.
 
-# HCE Microframework Static Output
+## HCE Microframework Static Output
 
-## Usage
+### Usage
+
 Compile the whole project as static output
 
 `php static-output.php` and `gulp`;

@@ -1,6 +1,6 @@
 {
   "name": "hce/microframework",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "description": "a lightweight framework designed for prototyping",
   "type": "project",
   "license": "proprietary",
@@ -11,7 +11,7 @@
     }
   ],
   "require": {
-    "hce/microframework-core": "^1.1.0"
+    "hce/microframework-core": "^1.5.0"
   },
   "minimum-stability": "dev",
   "prefer-stable": true
